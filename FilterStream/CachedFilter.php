@@ -43,11 +43,11 @@ class CachedFilter implements IFilter
 	{
 		$data = $this->cache->load($path);
 		if ($data === NULL) {
-			$data = $this->filter->process($path);
+			$data = $this->filter->processFile($path);
 			if ($data !== NULL) {
 				$this->cache->save($path, $data, array(
-					Cache::CONSTS => 'FilterStream::REVISION',
-					Cache::FILE
+					Cache::CONSTS => 'FilterStream\FilterStream::REVISION',
+					Cache::FILES => array($path)
 				));
 			}
 		}
