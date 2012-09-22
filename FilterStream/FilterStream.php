@@ -342,13 +342,6 @@ class FilterStream
 
 		$stat = ($flags & STREAM_URL_STAT_LINK) ? @lstat($path) : @stat($path); // intentionally @
 
-		if ($stat) {
-			$data = $filter->processFile($path);
-			if ($data !== NULL) {
-				$stat[7] = $stat['size'] = strlen($data);
-			}
-		}
-
 		return $stat;
 	}
 
