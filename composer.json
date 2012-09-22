@@ -14,5 +14,8 @@
 	},
 	"require": {
 		"nette/nette": "dev-master"
+	},
+	"require-dev": {
+		"nette/tester": "@dev"
 	}
 }
