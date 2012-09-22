@@ -89,6 +89,7 @@ class FilterStream
 
 		$flag = trim($mode, 'crwax+');  // text | binary mode
 		$mode = trim($mode, 'tb');     // mode
+		$usePath = (bool) ($options & STREAM_USE_PATH); // use include_path?
 
 		if ($mode === 'r') {
 			if ($this->data !== NULL) {
@@ -96,7 +97,7 @@ class FilterStream
 				$this->length = strlen($this->data);
 
 			} else {
-				$handle = fopen($this->path, 'r' . $flag, $use_path);
+				$handle = fopen($this->path, 'r' . $flag, $usePath);
 
 				if (!$handle) {
 					return FALSE;
@@ -115,7 +116,7 @@ class FilterStream
 				return FALSE;
 
 			} else {
-				$handle = fopen($this->path, $mode . $flag, $use_path);
+				$handle = fopen($this->path, $mode . $flag, $usePath);
 
 				if (!$handle) {
 					return FALSE;
