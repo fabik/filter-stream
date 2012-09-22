@@ -2,7 +2,6 @@
 	"name": "fabik/filterstream",
 	"description": "Filter Stream - an utility for files pre-processing.",
 	"keywords": ["filter", "stream", "php", "utility"],
-	"homepage": "http://nette.org",
 	"license": ["BSD-3", "GPLv2", "GPLv3"],
 	"authors": [
 		{
