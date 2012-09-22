@@ -3,7 +3,7 @@
 namespace FilterStream;
 
 use Nette\Caching\Cache,
-	Nette\Caching\ICacheStorage;
+	Nette\Caching\IStorage;
 
 
 
@@ -24,9 +24,9 @@ class CachedFilter implements IFilter
 
 	/**
 	 * @param  IFilter
-	 * @param  ICacheStorage
+	 * @param  IStorage
 	 */
-	public function __construct(IFilter $filter, ICacheStorage $storage)
+	public function __construct(IFilter $filter, IStorage $storage)
 	{
 		$this->filter = $filter;
 		$this->cache = new Cache($storage, 'FilterStream.CachedFilter');
