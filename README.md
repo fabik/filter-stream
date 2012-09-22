@@ -13,10 +13,10 @@ use Nette\Caching\Storages\FileStorage,
 
 $cacheStorage = new FileStorage(APP_DIR . '/../temp');
 
-$filter = new CallbackFilter(function ($filename) {
-	$ext = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
+$filter = new CallbackFilter(function ($path) {
+	$ext = strtolower(pathinfo($path, PATHINFO_EXTENSION));
 	if ($ext === 'php') {
-		$source = file_get_contents($filename);
+		$source = file_get_contents($path);
 		// ...
 		return $source;
 	} else {
