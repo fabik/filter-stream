@@ -184,7 +184,7 @@ class FilterStream
 			if ($this->offset === $this->length) {
 				return "";
 			} else {
-				$length = max($length, $this->length - $this->offset);
+				$length = min($length, $this->length - $this->offset);
 				$buffer = substr($this->data, $this->offset, $length);
 				$this->offset += $length;
 				return $buffer;
