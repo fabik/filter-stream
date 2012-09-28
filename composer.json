@@ -1,5 +1,5 @@
 {
-	"name": "fabik/filterstream",
+	"name": "fabik/filter-stream",
 	"description": "Filter Stream - an utility for files pre-processing.",
 	"keywords": ["filter", "stream", "php", "utility"],
 	"license": ["BSD-3", "GPLv2", "GPLv3"],
